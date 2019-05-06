@@ -19,6 +19,7 @@ function App() {
       const user = await axios(`http://localhost:8080/`);
       console.log(user.data);
       setUser(user.data[0]);
+      setLoggedIn(true);
 
       const result = await axios(
         `http://localhost:8080/api/v1/orders?user_id=${userID}`
