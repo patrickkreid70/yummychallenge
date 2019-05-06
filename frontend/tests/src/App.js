@@ -17,8 +17,7 @@ function App() {
   useEffect(() => {
     const fetchData = async () => {
       const user = await axios(`http://localhost:8080/`);
-
-      setUser(user.data[0]);
+      setUser(user.data[userID - 1]);
 
       const result = await axios(
         `http://localhost:8080/api/v1/orders?user_id=${userID}`
